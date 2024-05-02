@@ -1,6 +1,8 @@
 package com.example.universitytelegrambot.service;
 
 import com.example.universitytelegrambot.config.BotConfig;
+import com.example.universitytelegrambot.provider.BotCommandProvider;
+import com.example.universitytelegrambot.provider.KeyboardMarkupProvider;
 import com.vdurmont.emoji.EmojiParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
