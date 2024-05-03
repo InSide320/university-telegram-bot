@@ -2,21 +2,24 @@ package com.example.universitytelegrambot.service;
 
 import com.example.universitytelegrambot.model.User;
 import com.example.universitytelegrambot.model.UserRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
 import java.sql.Timestamp;
 
 @Service
-public class UserRegistrationService {
+@Slf4j
+public class UserService {
 
     private final UserRepository userRepository;
-    private static final Logger log = LoggerFactory.getLogger(UserRegistrationService.class);
 
-    public UserRegistrationService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public Iterable<User> findAll() {
+        return userRepository.findAll();
     }
 
     public void registerUser(Message msg) {

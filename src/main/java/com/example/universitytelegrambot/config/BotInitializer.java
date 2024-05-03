@@ -1,8 +1,8 @@
 package com.example.universitytelegrambot.config;
 
 import com.example.universitytelegrambot.service.TelegramBot;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -11,14 +11,11 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 @Component
+@Slf4j
+@AllArgsConstructor
 public class BotInitializer {
 
     private final TelegramBot bot;
-    private static final Logger log = LoggerFactory.getLogger(BotInitializer.class);
-
-    public BotInitializer(TelegramBot bot) {
-        this.bot = bot;
-    }
 
     @EventListener({ContextRefreshedEvent.class})
     public void init() throws TelegramApiException {
