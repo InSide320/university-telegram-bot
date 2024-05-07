@@ -18,4 +18,14 @@ public class AdsService {
     public Iterable<Ads> findAll() {
         return adsRepository.findAll();
     }
+
+    public void createAd(String textToAd) {
+        Ads ad = new Ads();
+        ad.setAd(textToAd);
+        adsRepository.save(ad);
+    }
+
+    public void deleteAd(Long id) {
+        adsRepository.deleteById(id);
+    }
 }

@@ -1,13 +1,15 @@
 package com.example.universitytelegrambot.service;
 
+import com.example.universitytelegrambot.model.documents.AdmissionDocuments;
 import com.example.universitytelegrambot.model.faculty.EducationLevel;
 import com.example.universitytelegrambot.model.faculty.Faculty;
 import com.example.universitytelegrambot.model.faculty.Specialty;
-import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -44,5 +46,9 @@ public class DataLoader {
 
     public List<Specialty> loadSpecialtiesFromFile(String filePath) {
         return loadFromFile(filePath, Specialty.class);
+    }
+
+    public List<AdmissionDocuments> loadAdmissionDocumentsFromFile(String filePath) {
+        return loadFromFile(filePath, AdmissionDocuments.class);
     }
 }

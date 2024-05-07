@@ -78,21 +78,21 @@
             "code": "022",
             "name": "Дизайн середовища",
             "educationalProgram": "Дизайн і візуальна культура",
-            "accreditationDate": "акр. до 01.07.2029"
+            "accreditationDate": "01.07.2029"
           },
           {
             "id": 8,
             "code": "032",
             "name": "Історія та археологія",
             "educationalProgram": "Музеєзнавство та експертиза",
-            "accreditationDate": "акр. до 01.07.2026"
+            "accreditationDate": "01.07.2026"
           },
           {
             "id": 9,
             "code": "033",
             "name": "Філософія",
             "educationalProgram": "Політична філософія",
-            "accreditationDate": "акр. до 01.07.2026"
+            "accreditationDate": "01.07.2026"
           }
         ]
       }

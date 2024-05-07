@@ -2,11 +2,13 @@ package com.example.universitytelegrambot.service;
 
 import com.example.universitytelegrambot.model.User;
 import com.example.universitytelegrambot.model.UserRepository;
+import com.vdurmont.emoji.EmojiParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
 import java.sql.Timestamp;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -22,7 +24,15 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public void registerUser(Message msg) {
+    public Optional<User> findById(long id) {
+        return userRepository.findById(id);
+    }
+
+    public void deleteUserById(long id) {
+        userRepository.deleteById(id);
+    }
+
+    public String registerUser(Message msg) {
         if (userRepository.findById(msg.getChatId()).isEmpty()) {
             var chatId = msg.getChatId();
             var chat = msg.getChat();
@@ -35,6 +45,12 @@ public class UserService {
 
             userRepository.save(user);
             log.info("User saved: {}", user);
+            return EmojiParser.parseToUnicode("User has been saved!" + ":white_check_mark:" + "\n" +
+                    "Check your data: /mydata");
+        } else {
+            log.info("User already exists: {}", userRepository.findById(msg.getChatId()));
+            return EmojiParser.parseToUnicode("User already exists!" + "" + "\n" +
+                    "Check your data: /mydata");
         }
     }
 }
