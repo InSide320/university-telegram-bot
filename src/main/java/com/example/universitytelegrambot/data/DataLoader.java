@@ -1,9 +1,7 @@
-package com.example.universitytelegrambot.service;
+package com.example.universitytelegrambot.data;
 
 import com.example.universitytelegrambot.model.documents.AdmissionDocuments;
-import com.example.universitytelegrambot.model.faculty.EducationLevel;
-import com.example.universitytelegrambot.model.faculty.Faculty;
-import com.example.universitytelegrambot.model.faculty.Specialty;
+import com.example.universitytelegrambot.model.faculty.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -12,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.List;
 
 @Component
@@ -29,7 +29,9 @@ public class DataLoader {
     private <T> List<T> loadFromFile(String filePath, Class<T> valueType) {
         CollectionType collectionType = typeFactory.constructCollectionType(List.class, valueType);
         try {
-            return objectMapper.readValue(new File(filePath), collectionType);
+            byte[] fileContent = Files.readAllBytes(new File(filePath).toPath());
+            String json = new String(fileContent, StandardCharsets.UTF_8);
+            return objectMapper.readValue(json, collectionType);
         } catch (IOException e) {
             log.error("Error with reading file: {}", e.getMessage());
             return null;
@@ -51,4 +53,14 @@ public class DataLoader {
     public List<AdmissionDocuments> loadAdmissionDocumentsFromFile(String filePath) {
         return loadFromFile(filePath, AdmissionDocuments.class);
     }
+
+    public List<Department> loadDepartmentFromFile(String filePath) {
+        return loadFromFile(filePath, Department.class);
+    }
+
+    public List<Coefficient> loadCoefficientsFromFile(String filePath) {
+        return loadFromFile(filePath, Coefficient.class);
+    }
 }
+
+

@@ -45,12 +45,12 @@ public class UserService {
 
             userRepository.save(user);
             log.info("User saved: {}", user);
-            return EmojiParser.parseToUnicode("User has been saved!" + ":white_check_mark:" + "\n" +
-                    "Check your data: /mydata");
+            return EmojiParser.parseToUnicode("Користувача було додано!" + ":white_check_mark:" + "\n" +
+                    "Перевірити персональні дані: /mydata");
         } else {
             log.info("User already exists: {}", userRepository.findById(msg.getChatId()));
-            return EmojiParser.parseToUnicode("User already exists!" + "" + "\n" +
-                    "Check your data: /mydata");
+            return EmojiParser.parseToUnicode("Користувач вже існує!" + "" + "\n" +
+                    "Перевірити персональні дані: /mydata");
         }
     }
 }

@@ -10,11 +10,14 @@ import java.util.List;
 @Table(name = "education_levels_table")
 public class EducationLevel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, unique = false)
     private String name;
+
+    @Column(name = "study_form", nullable = false)
+    private String studyForm;
 
     @ManyToOne
     @JoinColumn(name = "faculty_id", nullable = false)

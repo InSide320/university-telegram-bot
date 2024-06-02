@@ -11,36 +11,26 @@ import java.util.List;
 @Component
 public class KeyboardMarkupProvider {
 
-    @Value("${keyboard.row1.button1}")
-    private String row1Button1;
-
-    @Value("${keyboard.row1.button2}")
-    private String row1Button2;
-
-    @Value("${keyboard.row2.button1}")
-    private String row2Button1;
-
-    @Value("${keyboard.row2.button2}")
-    private String row2Button2;
-
-    @Value("${keyboard.row2.button3}")
-    private String row2Button3;
-
-
     public ReplyKeyboardMarkup createKeyboardMarkup() {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         List<KeyboardRow> keyboardRows = new ArrayList<>();
 
         KeyboardRow row1 = new KeyboardRow();
-        row1.add(row1Button1);
-        row1.add(row1Button2);
+        row1.add("Документи для вступу");
+        row1.add("Спеціальності фактультету");
         keyboardRows.add(row1);
 
         KeyboardRow row2 = new KeyboardRow();
-        row2.add(row2Button1);
-        row2.add(row2Button2);
-        row2.add(row2Button3);
+        row2.add("Про факультет");
+        row2.add("Перелік кафедр");
+        row2.add("Допомога");
         keyboardRows.add(row2);
+
+        KeyboardRow row3 = new KeyboardRow();
+        row3.add("Реєстрація користувача");
+        row3.add("Перевірка персональних даних");
+        row3.add("Видалити персональні дані");
+        keyboardRows.add(row3);
 
         replyKeyboardMarkup.setKeyboard(keyboardRows);
 
