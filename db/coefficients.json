@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Перелік вагових коефіцієнтів оцінок предметів національного мультипредметного тесту (2023 та 2022 років) при вступі на навчання основі ПЗСО або НРК5",
+    "firstMainSubject": 0.3,
+    "secondMainSubject": 0.5,
+    "thirdMainSubject": 0.2,
+    "foreignLanguage": 0.2,
+    "biology": 0.2,
+    "physics": 0.4,
+    "chemistry": 0.2
+  },
+  {
+    "id": 2,
+    "name": "Перелік вагових коефіцієнтів оцінок предметів національного мультипредметного тесту (2023 та 2022 років) при вступі на навчання основі ПЗСО або НРК5",
+    "firstMainSubject": 0.3,
+    "secondMainSubject": 0.5,
+    "thirdMainSubject": 0.2,
+    "foreignLanguage": 0.3,
+    "biology": 0.2,
+    "physics": 0.4,
+    "chemistry": 0.2
+  },
+  {
+    "id": 3,
+    "name": "Перелік вагових коефіцієнтів оцінок предметів національного мультипредметного тесту (2023 та 2022 років) при вступі на навчання основі ПЗСО або НРК5",
+    "firstMainSubject": 0.3,
+    "secondMainSubject": 0.5,
+    "thirdMainSubject": 0.2,
+    "foreignLanguage": 0.25,
+    "biology": 0.2,
+    "physics": 0.5,
+    "chemistry": 0.2
+  },
+  {
+    "id": 4,
+    "name": "Для конкурсного відбору на навчання для здобуття ступеня магістра",
+    "firstMainSubject": 0.2,
+    "secondMainSubject": 0.2,
+    "thirdMainSubject": 0.6
+  }
+]

@@ -1,4 +1,4 @@
-package com.example.universitytelegrambot.service;
+package com.example.universitytelegrambot.provider;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

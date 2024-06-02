@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "code": "112",
+    "name": "Статистика",
+    "educationalProgram": "Аналіз даних (DATA SCIENCE) та комп’ютерна статистика",
+    "accreditationDate": "30.05.2024",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 1
+    }
+  },
+  {
+    "id": 2,
+    "code": "121",
+    "name": "Інженерія програмного забезпечення",
+    "educationalProgram": "Інженерія програмного забезпечення",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 3,
+    "code": "122",
+    "name": "Комп’ютерні науки",
+    "educationalProgram": "Комп’ютерні науки та прикладне програмування",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 4,
+    "code": "123",
+    "name": "Комп’ютерна інженерія",
+    "educationalProgram": "Комп'ютерні системи та мережі",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 5,
+    "code": "123",
+    "name": "Комп’ютерна інженерія",
+    "educationalProgram": "Системне програмування",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 6,
+    "code": "123",
+    "name": "Комп’ютерна інженерія",
+    "educationalProgram": "Спеціалізовані комп’ютерні системи",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 7,
+    "code": "124",
+    "name": "Системний аналіз",
+    "educationalProgram": "Штучний інтелект",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 8,
+    "code": "125",
+    "name": "Кібербезпека та захист інформації",
+    "educationalProgram": "Управління кібербезпекою та захист інформації",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 9,
+    "code": "126",
+    "name": "Інформаційні системи та технології",
+    "educationalProgram": "Web-технології, web-дизайн",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 10,
+    "code": "174",
+    "name": "Автоматизація, комп’ютерно-інтегровані технології та робототехніка",
+    "educationalProgram": "Автоматизація та комп'ютерно-інтегровані системи та компоненти",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 3
+    }
+  },
+  {
+    "id": 11,
+    "code": "112",
+    "name": "Статистика",
+    "educationalProgram": "Аналіз даних (DATA SCIENCE) та комп’ютерна статистика",
+    "accreditationDate": "30.05.2024",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 12,
+    "code": "121",
+    "name": "Інженерія програмного забезпечення",
+    "educationalProgram": "Інженерія програмного забезпечення",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 13,
+    "code": "122",
+    "name": "Комп’ютерні науки",
+    "educationalProgram": "Комп’ютерні науки та прикладне програмування",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 14,
+    "code": "123",
+    "name": "Комп’ютерна інженерія",
+    "educationalProgram": "Комп'ютерні системи та мережі",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 15,
+    "code": "123",
+    "name": "Комп’ютерна інженерія",
+    "educationalProgram": "Системне програмування",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 16,
+    "code": "123",
+    "name": "Комп’ютерна інженерія",
+    "educationalProgram": "Спеціалізовані комп’ютерні системи",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 17,
+    "code": "124",
+    "name": "Системний аналіз",
+    "educationalProgram": "Штучний інтелект",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 18,
+    "code": "126",
+    "name": "Інформаційні системи та технології",
+    "educationalProgram": "Web-технології, web-дизайн",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 19,
+    "code": "174",
+    "name": "Автоматизація, комп’ютерно-інтегровані технології та робототехніка",
+    "educationalProgram": "Автоматизація та комп'ютерно-інтегровані системи та компоненти",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 35900,
+    "studyDurationMonths": 1.5,
+    "educationLevel": {
+      "id": 2
+    },
+    "coefficients": {
+      "id": 4
+    }
+  },
+  {
+    "id": 20,
+    "code": "112",
+    "name": "Статистика",
+    "educationalProgram": "Аналіз даних (DATA SCIENCE) та комп’ютерна статистика",
+    "accreditationDate": "30.05.2024",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 3,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 1
+    }
+  },
+  {
+    "id": 21,
+    "code": "121",
+    "name": "Інженерія програмного забезпечення",
+    "educationalProgram": "Інженерія програмного забезпечення",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 3,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 22,
+    "code": "121",
+    "name": "Інженерія програмного забезпечення",
+    "educationalProgram": "Інженерія програмного забезпечення",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 27500,
+    "studyDurationMonths": 2,
+    "educationLevel": {
+      "id": 1
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 23,
+    "code": "121",
+    "name": "Інженерія програмного забезпечення",
+    "educationalProgram": "Інженерія програмного забезпечення",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 22000,
+    "studyDurationMonths": 3,
+    "educationLevel": {
+      "id": 3
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 24,
+    "code": "121",
+    "name": "Інженерія програмного забезпечення",
+    "educationalProgram": "Інженерія програмного забезпечення",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 22000,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 3
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 25,
+    "code": "123",
+    "name": "Комп’ютерна інженерія",
+    "educationalProgram": "Комп'ютерні системи та мережі",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 22000,
+    "studyDurationMonths": 4,
+    "educationLevel": {
+      "id": 3
+    },
+    "coefficients": {
+      "id": 2
+    }
+  },
+  {
+    "id": 26,
+    "code": "123",
+    "name": "Комп’ютерна інженерія",
+    "educationalProgram": "Комп'ютерні системи та мережі",
+    "accreditationDate": "01.07.2026",
+    "tuitionFee": 22000,
+    "studyDurationMonths": 3,
+    "educationLevel": {
+      "id": 3
+    },
+    "coefficients": {
+      "id": 2
+    }
+  }
+]
