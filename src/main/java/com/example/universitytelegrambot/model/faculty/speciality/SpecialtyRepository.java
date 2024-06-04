@@ -1,12 +1,15 @@
-package com.example.universitytelegrambot.model.faculty;
+package com.example.universitytelegrambot.model.faculty.speciality;
 
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public interface SpecialtyRepository extends JpaRepository<Specialty, Long> {
 
     @Query("SELECT s from specialtiesTable s where s.educationLevel = :educationLevelId")

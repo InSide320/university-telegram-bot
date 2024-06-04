@@ -1,8 +1,8 @@
 package com.example.universitytelegrambot.provider;
 
 import com.example.universitytelegrambot.constant.TelegramConstantVariable;
-import com.example.universitytelegrambot.model.faculty.Department;
-import com.example.universitytelegrambot.model.faculty.Specialty;
+import com.example.universitytelegrambot.model.faculty.department.Department;
+import com.example.universitytelegrambot.model.faculty.speciality.Specialty;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;

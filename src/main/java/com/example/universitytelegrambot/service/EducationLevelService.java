@@ -1,7 +1,7 @@
 package com.example.universitytelegrambot.service;
 
-import com.example.universitytelegrambot.model.faculty.EducationLevel;
-import com.example.universitytelegrambot.model.faculty.EducationLevelRepository;
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevel;
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevelRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

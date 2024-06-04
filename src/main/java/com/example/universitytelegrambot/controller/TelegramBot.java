@@ -7,7 +7,11 @@ import com.example.universitytelegrambot.model.Ads;
 import com.example.universitytelegrambot.model.User;
 import com.example.universitytelegrambot.model.documents.AdmissionDocuments;
 import com.example.universitytelegrambot.model.documents.AdmissionDocumentsRepository;
-import com.example.universitytelegrambot.model.faculty.*;
+import com.example.universitytelegrambot.model.faculty.FacultyRepository;
+import com.example.universitytelegrambot.model.faculty.department.Department;
+import com.example.universitytelegrambot.model.faculty.department.DepartmentRepository;
+import com.example.universitytelegrambot.model.faculty.speciality.Specialty;
+import com.example.universitytelegrambot.model.faculty.speciality.SpecialtyRepository;
 import com.example.universitytelegrambot.provider.BotCommandProvider;
 import com.example.universitytelegrambot.provider.CreateInlineKeyboardButtonProvider;
 import com.example.universitytelegrambot.provider.DataLoaderProvider;
@@ -29,11 +33,13 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Component
@@ -72,7 +78,8 @@ public class TelegramBot extends TelegramLongPollingBot {
             SpecialtyRepository specialtyRepository,
             SpecialityService specialityService, KeyboardMarkupProvider keyboardMarkupProvider,
             HandleTelegramError handleTelegramError,
-            AdmissionDocumentsRepository admissionDocumentsRepository, DepartmentRepository departmentRepository, CreateInlineKeyboardButtonProvider createInlineKeyboardButtonProvider) {
+            AdmissionDocumentsRepository admissionDocumentsRepository, DepartmentRepository departmentRepository,
+            CreateInlineKeyboardButtonProvider createInlineKeyboardButtonProvider) {
         this.config = config;
         this.userService = userService;
         this.adsService = adsService;
@@ -117,22 +124,28 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
+    private boolean isOwner(Long chatId) {
+        return Objects.equals(config.getOwnerId(), chatId);
+    }
+
     private void handleMessage(Message message) {
         String messageText = message.getText();
         long chatId = message.getChatId();
 
-        if (config.getOwnerId() != chatId) {
-            return;
-        }
-
-        if (messageText.matches("^/send.*")) {
-            sendMessagesToAllUsers(messageText, chatId);
-        } else if (messageText.matches("^/create_ad.*")) {
-            createAd(messageText, chatId);
-        } else if (messageText.matches("^/delete_ad.*")) {
-            deleteAd(messageText, chatId);
+        if (isOwner(chatId)) {
+            if (messageText.matches("^/send.*") && isOwner(chatId)) {
+                sendMessagesToAllUsers(messageText, chatId);
+            } else if (messageText.matches("^/create_ad.*") && isOwner(chatId)) {
+                createAd(messageText, chatId);
+            } else if (messageText.matches("^/delete_ad.*") && isOwner(chatId)) {
+                deleteAd(messageText, chatId);
+            } else if (messageText.matches("^/admin.*") && isOwner(chatId)) {
+                adminCommandReceived(chatId, message.getChat().getUserName());
+            } else {
+                handleOwnerCommands(messageText, chatId, message);
+            }
         } else {
-            handleOtherCommands(messageText, chatId, message);
+            handleUserCommands(messageText, chatId, message);
         }
     }
 
@@ -243,7 +256,42 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    private void handleOtherCommands(String messageText, long chatId, Message message) {
+    private void handleOwnerCommands(String messageText, long chatId, Message message) {
+        log.info(messageText.split(" ")[0]);
+        switch (messageText) {
+            case "Редагувати спеціальності":
+                editSpecialties(chatId);
+                break;
+            case "Редагувати кафедри":
+                editDepartments(chatId);
+                break;
+            case "Редагувати освітні рівні":
+                editEducationLevels(chatId);
+                break;
+            default:
+                handleUserCommands(messageText, chatId, message);
+                break;
+        }
+    }
+
+    private void editSpecialties(long chatId) {
+        // Код для редагування спеціальностей
+        prepareAndSendMessage(
+                chatId, "Тут можна редагувати спеціальності.");
+    }
+
+    private void editDepartments(long chatId) {
+        // Код для редагування кафедр
+        prepareAndSendMessage(chatId, "Тут можна редагувати кафедри.");
+    }
+
+    private void editEducationLevels(long chatId) {
+        // Код для редагування освітніх рівнів
+        prepareAndSendMessage(chatId, "Тут можна редагувати освітні рівні.");
+    }
+
+
+    private void handleUserCommands(String messageText, long chatId, Message message) {
         switch (messageText) {
             case "/start":
                 dataLoaderProvider.loadData();
@@ -274,10 +322,21 @@ public class TelegramBot extends TelegramLongPollingBot {
             case "Про факультет":
                 informationAboutFaculty(chatId);
                 break;
+            case "Повернутись назад":
+                sendMessageWithKeyboard(
+                        chatId,
+                        "Ви повернулись назад до головного меню",
+                        keyboardMarkupProvider.createPublicKeyboardMarkup()
+                );
+                break;
             default:
-                prepareAndSendMessage(chatId, "Sorry, command was not recognized");
+                commandNotFound(chatId);
                 break;
         }
+    }
+
+    private void commandNotFound(long chatId) {
+        prepareAndSendMessage(chatId, "Вибачте, такої команди не існує!");
     }
 
     private void informationAboutFaculty(long chatId) {
@@ -477,7 +536,16 @@ public class TelegramBot extends TelegramLongPollingBot {
         );
         log.info("Replayed to user {}", name);
 
-        sendMessageWithKeyboard(chatId, answer);
+        sendMessageWithKeyboard(chatId, answer, keyboardMarkupProvider.createPublicKeyboardMarkup());
+    }
+
+    private void adminCommandReceived(long chatId, String name) {
+        String answer = EmojiParser.parseToUnicode(
+                "Це адмін меню:"
+        );
+        log.info("Replayed to admin {}", name);
+
+        sendMessageWithKeyboard(chatId, answer, keyboardMarkupProvider.createOwnerKeyboardMarkup());
     }
 
     @Scheduled(cron = "${cron.scheduler}")
@@ -494,11 +562,11 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    public void sendMessageWithKeyboard(long chatId, String textToSend) {
+    public void sendMessageWithKeyboard(long chatId, String textToSend, ReplyKeyboardMarkup replyKeyboardMarkup) {
         SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
         message.setText(textToSend);
-        message.setReplyMarkup(keyboardMarkupProvider.createKeyboardMarkup());
+        message.setReplyMarkup(replyKeyboardMarkup);
         executeMessage(message);
     }
 

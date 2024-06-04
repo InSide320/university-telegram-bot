@@ -1,4 +1,4 @@
-package com.example.universitytelegrambot.model.faculty;
+package com.example.universitytelegrambot.model.faculty.speciality.education.level;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -1,7 +1,11 @@
 package com.example.universitytelegrambot.service;
 
 import com.example.universitytelegrambot.constant.TelegramConstantVariable;
-import com.example.universitytelegrambot.model.faculty.*;
+import com.example.universitytelegrambot.model.faculty.speciality.Specialty;
+import com.example.universitytelegrambot.model.faculty.speciality.SpecialtyRepository;
+import com.example.universitytelegrambot.model.faculty.speciality.education.CoefficientRepository;
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevel;
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevelRepository;
 import com.vdurmont.emoji.EmojiParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

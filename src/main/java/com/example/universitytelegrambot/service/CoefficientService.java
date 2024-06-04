@@ -1,7 +1,7 @@
 package com.example.universitytelegrambot.service;
 
-import com.example.universitytelegrambot.model.faculty.Coefficient;
-import com.example.universitytelegrambot.model.faculty.CoefficientRepository;
+import com.example.universitytelegrambot.model.faculty.speciality.education.Coefficient;
+import com.example.universitytelegrambot.model.faculty.speciality.education.CoefficientRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,9 +1,9 @@
 package com.example.universitytelegrambot.service;
 
-import com.example.universitytelegrambot.model.faculty.EducationLevel;
-import com.example.universitytelegrambot.model.faculty.EducationLevelRepository;
-import com.example.universitytelegrambot.model.faculty.Specialty;
-import com.example.universitytelegrambot.model.faculty.SpecialtyRepository;
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevel;
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevelRepository;
+import com.example.universitytelegrambot.model.faculty.speciality.Specialty;
+import com.example.universitytelegrambot.model.faculty.speciality.SpecialtyRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

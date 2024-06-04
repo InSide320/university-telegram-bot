@@ -1,9 +1,9 @@
 package com.example.universitytelegrambot.provider;
 
 import com.example.universitytelegrambot.constant.TelegramConstantVariable;
-import com.example.universitytelegrambot.model.faculty.Department;
+import com.example.universitytelegrambot.model.faculty.department.Department;
 import com.example.universitytelegrambot.model.faculty.Faculty;
-import com.example.universitytelegrambot.model.faculty.Specialty;
+import com.example.universitytelegrambot.model.faculty.speciality.Specialty;
 import org.junit.jupiter.api.Test;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 

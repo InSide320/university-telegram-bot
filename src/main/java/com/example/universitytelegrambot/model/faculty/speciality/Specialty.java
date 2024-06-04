@@ -1,5 +1,7 @@
-package com.example.universitytelegrambot.model.faculty;
+package com.example.universitytelegrambot.model.faculty.speciality;
 
+import com.example.universitytelegrambot.model.faculty.speciality.education.Coefficient;
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

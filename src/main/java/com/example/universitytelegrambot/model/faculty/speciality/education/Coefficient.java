@@ -1,4 +1,4 @@
-package com.example.universitytelegrambot.model.faculty;
+package com.example.universitytelegrambot.model.faculty.speciality.education;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

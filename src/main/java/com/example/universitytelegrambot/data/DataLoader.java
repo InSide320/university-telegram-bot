@@ -2,6 +2,10 @@ package com.example.universitytelegrambot.data;
 
 import com.example.universitytelegrambot.model.documents.AdmissionDocuments;
 import com.example.universitytelegrambot.model.faculty.*;
+import com.example.universitytelegrambot.model.faculty.department.Department;
+import com.example.universitytelegrambot.model.faculty.speciality.Specialty;
+import com.example.universitytelegrambot.model.faculty.speciality.education.Coefficient;
+import com.example.universitytelegrambot.model.faculty.speciality.education.level.EducationLevel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.databind.type.TypeFactory;
